@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper';
 const style = {
     width: '100%',
     marginTop: 60,
+    padding: '10px 0',
     textAlign: 'center',
     display: 'inline-block',
 };

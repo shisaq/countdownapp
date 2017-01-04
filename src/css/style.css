@@ -6,13 +6,53 @@
 
 html,
 body,
-div {
-    font-family: 'Roboto', sans-serif;
-    background-color: #212121;
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
     margin: 0;
     padding: 0;
 }
 
-#app {
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #212121;
+}
 
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 200;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 200;
+    margin: .5em 0;
+}
+
+h3 {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    font-weight: 300;
+    margin: 1em 0;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.125px;
+}
+
+h4:not(:first-child) {
+    margin: 3em 0 1.2em;
 }
