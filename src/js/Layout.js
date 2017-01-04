@@ -1,9 +1,14 @@
 import React from 'react';
+import Paper from 'material-ui/Paper';
+
+import Header from './components/Header';
 
 export default class Layout extends React.Component {
     render() {
         return (
-            <h1>倒计时来了!</h1>
+            <div>
+                <Header />
+            </div>
         );
     }
 }
