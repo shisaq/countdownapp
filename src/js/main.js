@@ -9,6 +9,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
+import store from './CountdownStore';
 import Layout from './Layout';
 import Running from './pages/Running';
 import Setting from './pages/Setting';
@@ -20,7 +21,7 @@ const Main = () => (
         <Router history={hashHistory}>
             <Route path="/" component={Layout}>
                 <IndexRoute component={Running}></IndexRoute>
-                <Route path="setting" name="setting" component={Setting}></Route>
+                <Route path="setting" name="setting" component={Setting} store={store}></Route>
             </Route>
         </Router>
     </MuiThemeProvider>
