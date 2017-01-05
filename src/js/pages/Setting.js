@@ -8,12 +8,33 @@ import Radio from '../components/Radio';
 
 @observer
 export default class Setting extends React.Component {
-    submitInfo() {
-        const projectName = document.getElementById('projectName').value;
-        const deadline = document.getElementById('deadline').value;
-        const duration = document.getElementById('duration').value;
+    constructor() {
+        super();
+        this.state = {
+            errorText: ''
+        };
+    }
 
-        const data = {projectName, deadline, duration};
+    submitInfo() {
+        const projectName = document.getElementById('projectName');
+        const deadline = document.getElementById('deadline');
+        const duration = document.getElementById('duration');
+
+        if (!projectName.value) {
+            this.setState({
+                errorText: '起个名字吧！'
+            });
+            return;
+        }
+
+        const data = deadline ? {
+            projectName: projectName.value,
+            deadline: deadline.value
+        } : {
+            projectName: projectName.value,
+            duration: duration.value
+        };
+
         this.props.route.store.submitData(data);
     }
 
@@ -23,7 +44,13 @@ export default class Setting extends React.Component {
 
         return (
             <Paper zDepth={4}>
-                倒计时名称：<TextField id="projectName" name="projectName" defaultValue={projectName} />
+                倒计时名称：
+                <TextField
+                    id="projectName"
+                    name="projectName"
+                    defaultValue={projectName}
+                    errorText={this.state.errorText}
+                />
                 <Radio deadline={deadline} duration={duration} />
                 <FlatButton
                     label="现在开始倒计时！"

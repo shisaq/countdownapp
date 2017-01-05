@@ -31,11 +31,11 @@ export default class Radio extends React.Component {
                 >
                     <RadioButton
                         value="deadline"
-                        label="截止日期"
+                        label="我知道截止日期"
                     />
                     <RadioButton
                         value="duration"
-                        label="持续时长"
+                        label="我知道要持续的天数"
                     />
                 </RadioButtonGroup>
                 <DateShowcase selected={selected} duration={duration} />
