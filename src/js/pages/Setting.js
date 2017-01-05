@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import { observer } from 'mobx-react';
+import { Link } from 'react-router';
 
 import Radio from '../components/Radio';
 
@@ -39,7 +40,6 @@ export default class Setting extends React.Component {
     }
 
     render() {
-        console.log(this.props.route.store.cdData);
         const { projectName, deadline, duration } = this.props.route.store.cdData;
 
         return (
@@ -52,10 +52,12 @@ export default class Setting extends React.Component {
                     errorText={this.state.errorText}
                 />
                 <Radio deadline={deadline} duration={duration} />
-                <FlatButton
-                    label="现在开始倒计时！"
-                    onClick={this.submitInfo.bind(this)}
-                />
+                <Link to="/">
+                    <FlatButton
+                        label="现在开始倒计时！"
+                        onClick={this.submitInfo.bind(this)}
+                    />
+                </Link>
             </Paper>
         );
     }
