@@ -11,6 +11,7 @@ injectTapEventPlugin();
 
 import store from './CountdownStore';
 import Layout from './Layout';
+import Switch from './components/Switch';
 import Running from './pages/Running';
 import Setting from './pages/Setting';
 
@@ -20,7 +21,7 @@ const Main = () => (
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <Router history={hashHistory}>
             <Route path="/" component={Layout}>
-                <IndexRoute component={Running}></IndexRoute>
+                <IndexRoute component={Switch}></IndexRoute>
                 <Route path="setting" name="setting" component={Setting} store={store}></Route>
             </Route>
         </Router>
