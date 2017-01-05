@@ -2751,6 +2751,12 @@ react-tap-event-plugin@^2.0.1:
   dependencies:
     fbjs "^0.8.6"
 
+react-timeout@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-timeout/-/react-timeout-1.0.0.tgz#100056d81bbea208cbbec6e55e4efc86a61a7df8"
+  dependencies:
+    object-assign "^4.0.1"
+
 react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"

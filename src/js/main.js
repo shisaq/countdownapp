@@ -21,7 +21,7 @@ const Main = () => (
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <Router history={hashHistory}>
             <Route path="/" component={Layout}>
-                <IndexRoute component={Switch}></IndexRoute>
+                <IndexRoute component={Switch} store={store}></IndexRoute>
                 <Route path="setting" name="setting" component={Setting} store={store}></Route>
             </Route>
         </Router>
