@@ -17,6 +17,11 @@ class CountdownStore {
         this.days = Math.floor(this.t / (1000 * 60 * 60 * 24));
     }
 
+    terminateTime = () => {
+        this.sec = this.min = this.hours = this.days = 0;
+        console.log(this.sec);
+    }
+
     submitData = (data) => {
         let timeStamp;
         if (data.deadline) {
