@@ -9,22 +9,13 @@ import Radio from '../components/Radio';
 
 @observer
 export default class Setting extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            errorText: ''
-        };
-    }
-
     submitInfo() {
         const projectName = document.getElementById('projectName');
         const deadline = document.getElementById('deadline');
         const duration = document.getElementById('duration');
 
         if (!projectName.value) {
-            this.setState({
-                errorText: '起个名字吧！'
-            });
+            alert('起个名字吧！');
             return;
         }
 
@@ -35,6 +26,7 @@ export default class Setting extends React.Component {
             projectName: projectName.value,
             duration: duration.value
         };
+        console.log(data);
 
         this.props.route.store.submitData(data);
     }
@@ -49,7 +41,6 @@ export default class Setting extends React.Component {
                     id="projectName"
                     name="projectName"
                     defaultValue={projectName}
-                    errorText={this.state.errorText}
                 />
                 <Radio deadline={deadline} duration={duration} />
                 <Link to="/">

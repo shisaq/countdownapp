@@ -19,7 +19,6 @@ class CountdownStore {
 
     terminateTime = () => {
         this.sec = this.min = this.hours = this.days = 0;
-        console.log(this.sec);
     }
 
     submitData = (data) => {
