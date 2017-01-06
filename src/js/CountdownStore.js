@@ -26,16 +26,17 @@ class CountdownStore {
         let timeStamp;
         if (data.deadline) {
             const timezone = -(new Date().getTimezoneOffset() / 60 * 100);
-            timeStamp = new Date(data.deadline + ' 23:59:59 GMT' + timezone);
+            const timeString = data.deadline + ' 23:59:59 GMT' + timezone;
+            timeStamp = new Date(timeString);
         } else if (data.duration) {
             const timezone = -(new Date().getTimezoneOffset() / 60 * 100);
             const now = new Date();
-            const day = now.getDate();
-            const month = now.getMonth() + 1;
+            const day = ('0' + now.getDate()).slice(-2);
+            const month = ('0' + now.getMonth() + 1).slice(-2);
             const year = now.getFullYear();
 
-            const today = new Date(month + '-' + day + '-' + year + ' 23:59:59 GMT' + timezone);
-
+            const timeString = year + '/' + month + '/' + day + ' 23:59:59 GMT' + timezone;
+            const today = new Date(timeString);
             const deadline = today.setDate(today.getDate() + parseInt(data.duration) - 1);
             timeStamp = new Date(deadline);
 
