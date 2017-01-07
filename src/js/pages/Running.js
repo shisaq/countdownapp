@@ -13,7 +13,8 @@ const styles = {
         padding: '20px 0'
     },
     name: {
-        margin: 0
+        margin: 0,
+        fontFamily: 'Roboto, sans-serif'
     },
     clock: {
         display: 'flex',
