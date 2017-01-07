@@ -27,7 +27,7 @@ import Setting from './pages/Setting';
 
 const customizedTheme = {
     spacing: spacing,
-    fontFamily: 'HYMiaoHunTiW, sans-serif',
+    fontFamily: 'miaofont, Roboto, sans-serif',
     palette: {
         primary1Color: orange200,
         primary2Color: orange200,
