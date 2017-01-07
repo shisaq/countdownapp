@@ -14,7 +14,7 @@ export default class Header extends React.Component {
         return (
             <header>
                 <Paper style={style} zDepth={4}>
-                    <h1>倒计时来了!</h1>
+                    <h1>我的倒计时</h1>
                 </Paper>
             </header>
         );

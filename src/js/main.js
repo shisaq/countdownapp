@@ -2,12 +2,21 @@ import "../css/style.css"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import {green200} from 'material-ui/styles/colors';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+
+// material-ui theme
+import {
+    cyan700,
+    grey600,
+    pinkA100, pinkA200, pinkA400,
+    fullWhite, green200
+} from 'material-ui/styles/colors';
+import {fade} from 'material-ui/utils/colorManipulator';
+import spacing from 'material-ui/styles/spacing';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
+
 
 import store from './CountdownStore';
 import Layout from './Layout';
@@ -15,10 +24,31 @@ import Switch from './components/Switch';
 import Running from './pages/Running';
 import Setting from './pages/Setting';
 
-darkBaseTheme.palette.textColor = green200;
+
+const customizedTheme = {
+    spacing: spacing,
+    fontFamily: 'Roboto, sans-serif',
+    palette: {
+        primary1Color: cyan700,
+        primary2Color: cyan700,
+        primary3Color: grey600,
+        accent1Color: pinkA200,
+        accent2Color: pinkA400,
+        accent3Color: pinkA100,
+        textColor: green200,
+        secondaryTextColor: fade(fullWhite, 0.7),
+        alternateTextColor: '#303030',
+        canvasColor: '#303030',
+        borderColor: fade(fullWhite, 0.3),
+        disabledColor: fade(fullWhite, 0.3),
+        pickerHeaderColor: fade(fullWhite, 0.12),
+        clockCircleColor: fade(fullWhite, 0.12),
+    }
+};
+const muiTheme = getMuiTheme(customizedTheme);
 
 const Main = () => (
-    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+    <MuiThemeProvider muiTheme={muiTheme}>
         <Router history={hashHistory}>
             <Route path="/" component={Layout}>
                 <IndexRoute component={Switch} store={store}></IndexRoute>
