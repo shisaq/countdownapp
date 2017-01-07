@@ -11,6 +11,9 @@ const styles = {
     bg: {
         padding: '20px 0'
     },
+    namearea: {
+        maxWidth: 200
+    },
     divide: {
         marginTop: 20
     },
@@ -54,6 +57,7 @@ export default class Setting extends React.Component {
                         id="projectName"
                         name="projectName"
                         defaultValue={projectName}
+                        style={styles.namearea}
                     />
                 </div>
                 <div style={styles.divide}>

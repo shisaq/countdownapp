@@ -13,12 +13,13 @@ export default class DateShowcase extends React.Component {
             formatDate={this.formatDate}
             id="deadline"
             name="deadline"
+            floatingLabelText="点击这里选择截止日期"
             autoOk={true}
         />);
         const durationComponent = (<TextField
             id="duration"
             name="duration"
-            floatingLabelText="单位：天"
+            floatingLabelText="点击这里输入持续天数"
             defaultValue={duration}
         />);
         const deadlineOrDuration = selected === 'deadline' ?

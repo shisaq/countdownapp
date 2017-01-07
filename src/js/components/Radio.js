@@ -3,6 +3,12 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 
 import DateShowcase from './DateShowcase';
 
+const style = {
+    maxWidth: 280,
+    margin: '0 auto',
+    textAlign: 'left'
+};
+
 export default class Radio extends React.Component {
     constructor() {
         super();
@@ -26,6 +32,7 @@ export default class Radio extends React.Component {
                     name="timeType"
                     defaultSelected={selected}
                     onChange={this.handleChange.bind(this)}
+                    style={style}
                 >
                     <RadioButton
                         value="deadline"
