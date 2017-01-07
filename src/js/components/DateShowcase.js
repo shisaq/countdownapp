@@ -13,7 +13,7 @@ export default class DateShowcase extends React.Component {
             formatDate={this.formatDate}
             id="deadline"
             name="deadline"
-            hintText="点击选择截止日期"
+            autoOk={true}
         />);
         const durationComponent = (<TextField
             id="duration"

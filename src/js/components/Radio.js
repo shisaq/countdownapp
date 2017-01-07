@@ -15,7 +15,6 @@ export default class Radio extends React.Component {
         this.setState({
             selected: e.target.value
         });
-        // console.log('state中的值', this.state.selected);
     }
 
     render() {

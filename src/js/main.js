@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 // material-ui theme
 import {
-    cyan700,
+    orange200,
     grey600,
     pinkA100, pinkA200, pinkA400,
     fullWhite, green200
@@ -27,10 +27,10 @@ import Setting from './pages/Setting';
 
 const customizedTheme = {
     spacing: spacing,
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'HYMiaoHunTiW, sans-serif',
     palette: {
-        primary1Color: cyan700,
-        primary2Color: cyan700,
+        primary1Color: orange200,
+        primary2Color: orange200,
         primary3Color: grey600,
         accent1Color: pinkA200,
         accent2Color: pinkA400,
