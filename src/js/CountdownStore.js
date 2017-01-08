@@ -23,12 +23,12 @@ class CountdownStore {
 
     submitData = (data) => {
         let timeStamp;
+        let timezone = -(new Date().getTimezoneOffset() / 60 * 100);
+            timezone = timezone < 0 ? timezone : '+' + timezone;
         if (data.deadline) {
-            const timezone = -(new Date().getTimezoneOffset() / 60 * 100);
             const timeString = data.deadline + ' 23:59:59 GMT' + timezone;
             timeStamp = new Date(timeString);
         } else if (data.duration) {
-            const timezone = -(new Date().getTimezoneOffset() / 60 * 100);
             const now = new Date();
             const day = ('0' + now.getDate()).slice(-2);
             const month = ('0' + now.getMonth() + 1).slice(-2);
