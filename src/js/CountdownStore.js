@@ -31,7 +31,7 @@ class CountdownStore {
         } else if (data.duration) {
             const now = new Date();
             const day = ('0' + now.getDate()).slice(-2);
-            const month = ('0' + now.getMonth() + 1).slice(-2);
+            const month = ('0' + (now.getMonth() + 1)).slice(-2);
             const year = now.getFullYear();
 
             const timeString = year + '/' + month + '/' + day + ' 23:59:59 GMT' + timezone;
